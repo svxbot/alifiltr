@@ -7,13 +7,8 @@ function parseGetParams() {
 	} 
 	return $_GET; 
 }
-params = {
-	'shipCountry':'ru',
-	'isFreeShip':'y',
-	'isFavorite':'y',
-	'isRtl':'yes',
-}
 function setGetParams(params){
+	a = parseGetParams();
 	for(var key in params){
 	    a[key] = params[key];
 	}
@@ -23,5 +18,11 @@ function setGetParams(params){
     		loc = loc + key + '=' + a[key] + '&';
     }
     window.location.href = loc;
+}
+params = {
+	'shipCountry':'ru',
+	'isFreeShip':'y',
+	'isFavorite':'y',
+	'isRtl':'yes',
 }
 setGetParams(params);
